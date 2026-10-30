@@ -2,7 +2,7 @@ export const profile = {
   name: "Mandengue",
   initials: "MN",
   role: "Engineer — Cybersecurity & Industry 4.0",
-  //tagline: "Engineer — cybersecurity & industry 4.0, transformer and tinkerer.",
+  tagline: "Engineer — cybersecurity & industry 4.0, transformer and tinkerer.", // used for the SEO description in app/layout.tsx
   siteTagline: "BUILD / SECURE / SHARE",
   availability: "Available for opportunities",
   isAvailable: true,

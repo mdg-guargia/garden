@@ -14,6 +14,7 @@ export type Section = {
   linkLabel: string; // the underlined link text
   href: string;
   trail?: string; // plain text after the link
+  follow?: { linkLabel: string; href: string }; // second link, stuck right under this line (same paragraph)
   navLabel: string; // short label used in the site nav
 };
 
@@ -33,6 +34,7 @@ export const sections: Section[] = [
       " — cybersecurity & industry 4.0, transformer and tinkerer.",
     href: "/tech",
     navLabel: "tech",
+    follow: { linkLabel: "take a look at what i'm building", href: "/working-on" },
   },
   {
     id: "photo",
@@ -51,11 +53,11 @@ export const sections: Section[] = [
     navLabel: "bike",
   },
   {
-    id: "working-on",
-    lead: "and here's a running list of ",
-    linkLabel: "things i'm working on",
-    trail: " right now.",
-    href: "/working-on",
-    navLabel: "working on",
+    id: "fpv",
+    lead: "and i fly ",
+    linkLabel: "fpv drones",
+    trail: " — builds, tuning and flights.",
+    href: "/fpv",
+    navLabel: "fpv",
   },
 ];

@@ -12,7 +12,8 @@ const sectionLinks = [
   { href: "/tech", label: "tech" },
   { href: "/photo", label: "photo" },
   { href: "/bike", label: "bike" },
-  { href: "/working-on", label: "working on" },
+  { href: "/fpv", label: "fpv" },
+  { href: "/working-on", label: "building" },
   { href: "/life", label: "life" },
   { href: "/contact", label: "contact" },
 ];

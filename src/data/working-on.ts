@@ -1,39 +1,45 @@
-// A lightweight, frequently-updated list. Each entry can be just a link
-// (e.g. a Substack post, an app you shipped) or a short note with no link
-// at all. Add/remove freely — this is meant to churn.
+// The list of projects shown on /working-on (the page that mirrors the
+// homepage). One entry per project: a title, an optional one-line note, and
+// an optional `href` — an internal page (e.g. "/tech/commflow") or an
+// external URL (GitHub repo, live app, Substack post). Without an `href`
+// the title is shown as plain text. Add/remove freely.
 
-export type WorkingOnItem = {
+export type Project = {
   id: string;
   title: string;
-  note?: string; // short freeform text, optional
-  link?: string; // e.g. a Substack post, a live app, a repo
-  linkLabel?: string; // defaults to "Open ↗"
-  status?: "active" | "paused" | "shipped";
-  date: string;
+  note?: string; // short one-liner shown after the title
+  href?: string; // internal path or external URL
 };
 
-export const workingOn: WorkingOnItem[] = [
+export const projects: Project[] = [
   {
-    id: "commflow-v2",
-    title: "Commflow — replacing native enums with the Zod validation layer",
-    note: "Ongoing refactor across the codebase.",
-    status: "active",
-    date: "2026-08-01",
+    id: "quatrium",
+    title: "Projet Quatrium",
+    note: "modernizing industrial machine communication with a Unified Namespace.",
+    href: "/tech/unified-namespace-industry-4",
   },
   {
-    id: "substack",
-    title: "[YOUR SUBSTACK NAME]",
-    note: "[WHAT YOU WRITE ABOUT THERE]",
-    link: "[YOUR SUBSTACK URL]",
-    linkLabel: "Read on Substack",
-    status: "active",
-    date: "[DATE]",
+    id: "commflow",
+    title: "Commflow",
+    note: "a campaign management platform for email and SMS, built on Next.js.",
+    // href: "https://github.com/…", // add the repo link when it's public
   },
   {
-    id: "next-thing",
-    title: "[SOMETHING ELSE YOU'RE WORKING ON]",
-    link: "[LINK, IF ANY]",
-    status: "active",
-    date: "[DATE]",
+    id: "projetedge",
+    title: "ProjetEdge",
+    note: "a native Android edge camera system with sub-50ms audio/video sync.",
+    // href: "https://github.com/…",
+  },
+  {
+    id: "affine",
+    title: "AFFiNE self-hosted",
+    note: "a self-hosted deployment on Debian with Docker Compose.",
+    href: "/tech/affine-self-hosted-deployment",
+  },
+  {
+    id: "telegram-bot",
+    title: "Telegram automation bot",
+    note: "a Python script on Telethon that reliably catches message edits.",
+    href: "/tech/telegram-automation-bot",
   },
 ];
