@@ -2,10 +2,10 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import { SectionHeading } from "@/components/SectionHeading";
-import { Tag } from "@/components/Tag";
+import { KeyFigures } from "@/components/KeyFigures";
+import { OpenToCard } from "@/components/OpenToCard";
 import { techItems, techTypeLabels, TechType, techIntro } from "@/data/tech";
-import { formatDate } from "@/lib/utils";
+import { cx, formatDate } from "@/lib/utils";
 
 const TABS: { id: TechType | "all"; label: string }[] = [
   { id: "all", label: "All items" },
@@ -34,26 +34,59 @@ export default function TechPage() {
 
   return (
     <div className="max-w-3xl">
-      <SectionHeading
-        //eyebrow="Tech"
-        title="aye, i'm Mandengue"
-        description={techIntro}
-      />
-
-      <div className="mb-6 flex flex-col gap-4">
-        <input
-          type="search"
-          placeholder="Search…"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          className="w-full rounded-lg border border-border bg-transparent px-3 py-2 text-sm outline-none focus:border-accent"
-        />
-        <div className="flex flex-wrap gap-2">
-          {TABS.map((t) => (
-            <Tag key={t.id} label={t.label} active={tab === t.id} onClick={() => setTab(t.id)} />
-          ))}
-        </div>
+      {/* Speech */}
+      <h1 className="font-serif text-3xl tracking-tight text-foreground sm:text-4xl">
+        aye, i&apos;m Mandengue
+      </h1>
+      <div className="mt-4 flex max-w-2xl flex-col gap-4 text-foreground/80">
+        {techIntro.about.map((p) => (
+          <p key={p}>{p}</p>
+        ))}
       </div>
+      <div className="mt-6 flex max-w-2xl flex-col gap-4 text-foreground/80">
+        {techIntro.consulting.map((p) => (
+          <p key={p}>{p}</p>
+        ))}
+      </div>
+
+      {/* Resume button, then the key figures */}
+      <Link
+        href="/resume"
+        className="mt-8 inline-flex items-center rounded-full border border-accent bg-accent px-4 py-2 font-mono text-xs text-background transition-opacity hover:opacity-90"
+      >
+        Resume
+      </Link>
+      <div className="mt-10">
+        <KeyFigures />
+      </div>
+
+
+
+      {/* Work: intro, search, tabs, list */}
+      <p className="mt-16 max-w-2xl text-foreground/80">{techIntro.work}</p>
+
+      <div className="mt-10 flex flex-col gap-4">
+        {/* Same look as the navbar: mono links separated by "/", active one underlined */}
+        <ul className="flex flex-wrap gap-x-4 gap-y-1 font-mono text-xs text-muted">
+          {TABS.map((t, i) => (
+            <li key={t.id} className="flex items-center gap-4">
+              <button
+                type="button"
+                onClick={() => setTab(t.id)}
+                aria-pressed={tab === t.id}
+                className={cx(
+                  "cursor-pointer transition-colors hover:text-foreground",
+                  tab === t.id && "text-foreground underline underline-offset-4"
+                )}
+              >
+                {t.label}
+              </button>
+              {i < TABS.length - 1 && <span className="text-border">/</span>}
+            </li>
+          ))}
+        </ul>
+      </div>
+      
 
       <div className="flex flex-col divide-y divide-border">
         {filtered.map((item) => {
@@ -97,6 +130,11 @@ export default function TechPage() {
         {filtered.length === 0 && (
           <p className="py-4 text-sm text-muted">Nothing here yet.</p>
         )}
+      </div>
+
+            {/* Contact card */}
+      <div className="mt-12">
+        <OpenToCard />
       </div>
     </div>
   );

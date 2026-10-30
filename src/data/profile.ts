@@ -8,6 +8,15 @@ export const profile = {
   isAvailable: true,
   location: "Angers, France",
   email: "[YOUR EMAIL]",
+
+  // The "open to…" card on /tech (a button there emails `email` above).
+  openTo: {
+    roles: "Open to Industrial Digital Transformation & Cybersecurity Engineer roles",
+    pitch: "Let’s build what runs next.",
+    location: "Paris, Île-de-France",
+    mobility: "Open to worldwide mobility",
+  },
+
   github: "[YOUR GITHUB URL]",
   linkedin: "[YOUR LINKEDIN URL]",
   cvUrl: "[YOUR CV / RESUME URL]",

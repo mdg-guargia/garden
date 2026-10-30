@@ -3,10 +3,32 @@
 // `externalLink` (e.g. a Substack post, a GitHub repo, a YouTube video) if
 // it should open elsewhere instead of an internal page.
 
-// The short presentation shown at the top of /tech, before the category
-// tabs — this replaces the old standalone /about page.
-export const techIntro =
-  "an engineer specialized in Cybersecurity.\n\nI'm interested in OT, IoT, cloud, AI, automation, and cyber-resilience, especially when they come together in real-world systems.\n\nMy goal is simple: understand how things work, build them, secure them, and eventually create my own.";
+// The presentation shown at the top of /tech — this replaces the old
+// standalone /about page. Each string is one paragraph.
+export const techIntro = {
+  // Continues the page title ("aye, i'm …"), so it starts in lowercase.
+  about: [
+    "an engineer specialized in cybersecurity. I'm drawn to OT, IoT, cloud, AI, automation and cyber-resilience — most of all where they come together in real-world systems.",
+    "My goal is simple: understand how things work, build them, secure them, and eventually create my own.",
+  ],
+  consulting: [
+    "My work is to support industrial companies in their digital transformation, connecting management systems (ERP/SAP), production software (MES), industrial equipment and IoT technologies.",
+    "I work across strategy, architecture and deployment: I talk with both industrial and IT leadership, design end-to-end solutions and drive their implementation.",
+    "The goal is to improve productivity, quality, maintenance and plant performance through automation, AI, IT/OT integration and, of course, cybersecurity.",
+  ],
+  // Shown above the search box and the tabs.
+  work: "From the first idea to production. Architecture case studies, the platforms I use and personal builds: every project starts from a concrete problem and ends up in production.",
+};
+
+// The big numbers shown under the "Resume" button on /tech. Replace each
+// `[N]` with your real figure (e.g. "12" or "30+").
+export const techStats: { value: string; label: string }[] = [
+  { value: "[N]", label: "industrial companies advised" },
+  { value: "[N]", label: "talks & conferences" },
+  { value: "[N]", label: "documents published" },
+  { value: "[N]", label: "workshops delivered" },
+  { value: "[N]", label: "operators trained" },
+];
 
 export type TechType =
   | "work"

@@ -7,8 +7,7 @@ import { profile } from "@/data/profile";
 
 const sectionLinks = [
   { href: "/about", label: "about" },
-  { href: "/experience", label: "experience" },
-  { href: "/skills", label: "skills" },
+  { href: "/resume", label: "resume" },
   { href: "/tech", label: "tech" },
   { href: "/photo", label: "photo" },
   { href: "/bike", label: "bike" },
