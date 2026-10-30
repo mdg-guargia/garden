@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/tech",
     "/photo",
     "/bike",
+    "/fpv",
     "/working-on",
     "/life",
     "/contact",
