@@ -20,6 +20,10 @@
   --color-border: var(--border);
   --font-serif: "Iowan Old Style", "Palatino Linotype", Georgia, "Times New Roman",
     serif;
+  /* Display face for big headlines: a condensed, high-contrast serif with a
+     matching italic (self-hosted via @fontsource/instrument-serif) */
+  --font-display: "Instrument Serif", "Bodoni 72", Didot, "Iowan Old Style",
+    Georgia, serif;
   --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
   --font-mono: ui-monospace, "SF Mono", "Cascadia Code", "Roboto Mono", monospace;

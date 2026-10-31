@@ -19,9 +19,13 @@ const TABS: { id: TechType | "all"; label: string }[] = [
   { id: "video", label: techTypeLabels.video },
 ];
 
+// How many items the list shows before the "load more" button.
+const INITIAL_COUNT = 3;
+
 export default function TechPage() {
   const [tab, setTab] = useState<TechType | "all">("all");
   const [query, setQuery] = useState("");
+  const [showAll, setShowAll] = useState(false);
 
   const filtered = useMemo(() => {
     return techItems
@@ -31,6 +35,15 @@ export default function TechPage() {
       )
       .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   }, [tab, query]);
+
+  const visible = showAll ? filtered : filtered.slice(0, INITIAL_COUNT);
+  const hasMore = !showAll && filtered.length > INITIAL_COUNT;
+
+  // Changing the tab starts again from the first 3 items.
+  const selectTab = (id: TechType | "all") => {
+    setTab(id);
+    setShowAll(false);
+  };
 
   return (
     <div className="max-w-3xl">
@@ -72,7 +85,7 @@ export default function TechPage() {
             <li key={t.id} className="flex items-center gap-4">
               <button
                 type="button"
-                onClick={() => setTab(t.id)}
+                onClick={() => selectTab(t.id)}
                 aria-pressed={tab === t.id}
                 className={cx(
                   "cursor-pointer transition-colors hover:text-foreground",
@@ -89,7 +102,7 @@ export default function TechPage() {
       
 
       <div className="flex flex-col divide-y divide-border">
-        {filtered.map((item) => {
+        {visible.map((item) => {
           const inner = (
             <>
               <div className="flex items-baseline justify-between gap-4">
@@ -131,6 +144,17 @@ export default function TechPage() {
           <p className="py-4 text-sm text-muted">Nothing here yet.</p>
         )}
       </div>
+
+      {hasMore && (
+        // Same typography as the navbar links
+        <button
+          type="button"
+          onClick={() => setShowAll(true)}
+          className="mt-6 cursor-pointer font-mono text-xs text-muted underline underline-offset-4 transition-colors hover:text-foreground"
+        >
+          load more
+        </button>
+      )}
 
             {/* Contact card */}
       <div className="mt-12">

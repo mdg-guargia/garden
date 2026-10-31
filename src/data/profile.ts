@@ -7,14 +7,14 @@ export const profile = {
   availability: "Available for opportunities",
   isAvailable: true,
   location: "Angers, France",
-  email: "[YOUR EMAIL]",
+  email: "contact@monwebsite.com", // placeholder — replace with your real address (shown and used for mailto on /tech and /contact)
 
-  // The "open to…" card on /tech (a button there emails `email` above).
+  // The contact banner on /tech: small line on top, big headline below, and
+  // `email` on the right with a round button that opens a new mail.
+  // In `pitch`, a word between *asterisks* is set in italic.
   openTo: {
     roles: "Open to Industrial Digital Transformation & Cybersecurity Engineer roles",
-    pitch: "Let’s build what runs next.",
-    location: "Paris, Île-de-France",
-    mobility: "Open to worldwide mobility",
+    pitch: "Let’s build what *runs* next.",
   },
 
   github: "[YOUR GITHUB URL]",
