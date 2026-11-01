@@ -6,7 +6,7 @@ export const metadata = { title: `FPV drones — ${profile.name}` };
 
 export default function FpvPage() {
   return (
-    <div className="max-w-3xl">
+    <div>
       <SectionHeading eyebrow="FPV" title="Drones" />
 
       <p className="max-w-2xl text-foreground/80">{fpvIntro.statement}</p>

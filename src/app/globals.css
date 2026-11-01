@@ -8,9 +8,21 @@
   --accent: #2f4a37;
   --accent-soft: #b7c7ac;
   --border: #d9d1ba;
+
+  /* Vivid accents (used on /resume): bright green and blue for bars, dots and
+     bullets; the "-ink" variants are darker so small text stays readable on
+     the cream background. */
+  --vivid: #6b6f5f;
+  --vivid-ink: #2f4a37;
+  --azure: #22261f;
+  --azure-ink: #2f4a37;
 }
 
 @theme inline {
+  --color-vivid: var(--vivid);
+  --color-vivid-ink: var(--vivid-ink);
+  --color-azure: var(--azure);
+  --color-azure-ink: var(--azure-ink);
   --color-background: var(--background);
   --color-background-alt: var(--background-alt);
   --color-foreground: var(--foreground);

@@ -29,9 +29,9 @@ export const sections: Section[] = [
   },*/
   {
     id: "Engineer",
-    linkLabel: "Engineer",
+    linkLabel: "Cybersecurity & industry 4.0 Engineer",
     trail:
-      " — cybersecurity & industry 4.0, transformer and tinkerer.",
+      ", transformer and tinkerer.",
     href: "/tech",
     navLabel: "tech",
     follow: { linkLabel: "take a look at what i'm building", href: "/working-on" },

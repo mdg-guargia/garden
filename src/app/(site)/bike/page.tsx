@@ -6,7 +6,7 @@ export const metadata = { title: `Bike — ${profile.name}` };
 
 export default function BikePage() {
   return (
-    <div className="max-w-3xl">
+    <div>
       <SectionHeading eyebrow="Bike" title="Cycling" />
 
       <p className="max-w-2xl text-foreground/80">{bikeIntro.statement}</p>
@@ -37,7 +37,7 @@ export default function BikePage() {
       </Section>
 
       <Section title="Bike setup">
-        <dl className="grid grid-cols-1 gap-x-8 gap-y-2 text-sm sm:grid-cols-2">
+        <dl className="grid grid-cols-1 gap-x-8 gap-y-2 text-sm sm:grid-cols-2 lg:grid-cols-4">
           <Row label="Bike" value={setup.bike} />
           <Row label="Frame" value={setup.frame} />
           <Row label="Groupset" value={setup.groupset} />
@@ -75,7 +75,7 @@ export default function BikePage() {
       </Section>
 
       <Section title="Photos & videos">
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
           {media.photos.map((src) => (
             <div
               key={src}

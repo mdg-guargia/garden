@@ -16,6 +16,7 @@ export default function Home() {
             <>
               {" "}
               <Link href={s.follow.href} className="underline-link">
+              <br />
                 {s.follow.linkLabel}
               </Link>
             </>

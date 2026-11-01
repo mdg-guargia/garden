@@ -20,7 +20,7 @@ export default function PhotoPage() {
         </a>
       </div>
 
-      <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {photos.map((p) => (
           <figure key={p.slug} className="flex flex-col gap-2">
             <div className="flex aspect-[4/5] items-center justify-center border border-border bg-background-alt px-4 text-center font-mono text-xs text-muted">

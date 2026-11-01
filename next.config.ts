@@ -8,6 +8,10 @@ const nextConfig: NextConfig = {
       { source: "/skills", destination: "/resume#skills", permanent: true },
     ];
   },
+  
 };
+module.exports = {
+  allowedDevOrigins: ['192.168.1.13'],
+}
 
 export default nextConfig;

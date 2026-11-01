@@ -23,11 +23,11 @@ export const techIntro = {
 // The big numbers shown under the "Resume" button on /tech. Replace each
 // `[N]` with your real figure (e.g. "12" or "30+").
 export const techStats: { value: string; label: string }[] = [
-  { value: "[N]", label: "industrial companies advised" },
-  { value: "[N]", label: "talks & conferences" },
-  { value: "[N]", label: "documents published" },
-  { value: "[N]", label: "workshops delivered" },
-  { value: "[N]", label: "operators trained" },
+  { value: "3", label: "Manufacturers advised" },
+  { value: "8", label: "talks & conferences" },
+  { value: "20+", label: "documents published" },
+  { value: "2", label: "workshops delivered" },
+  { value: "5", label: "operators trained" },
 ];
 
 export type TechType =

@@ -46,7 +46,7 @@ export default function TechPage() {
   };
 
   return (
-    <div className="max-w-3xl">
+    <div>
       {/* Speech */}
       <h1 className="font-serif text-3xl tracking-tight text-foreground sm:text-4xl">
         aye, i&apos;m Mandengue
@@ -114,7 +114,7 @@ export default function TechPage() {
                   {formatDate(item.date)}
                 </time>
               </div>
-              <p className="text-sm text-muted">{item.summary}</p>
+              <p className="max-w-3xl text-sm text-muted">{item.summary}</p>
               <div className="mt-1 flex flex-wrap gap-2 font-mono text-xs text-muted">
                 <span className="text-accent">{techTypeLabels[item.type]}</span>
                 {item.tags.map((tag) => (

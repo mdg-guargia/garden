@@ -1,14 +1,15 @@
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
+import { SiteShell } from "@/components/SiteShell";
 
 export default function SiteLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex min-h-full flex-col">
+    <SiteShell>
       <Nav />
-      <main className="mx-auto w-full max-w-5xl flex-1 px-6 py-16 sm:px-10">
+      <main className="mx-auto w-full max-w-(--site-w) flex-1 px-6 py-16 sm:px-10">
         {children}
       </main>
       <Footer />
-    </div>
+    </SiteShell>
   );
 }

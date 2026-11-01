@@ -27,7 +27,7 @@ export function Nav() {
 
   return (
     <header className="border-b border-border/70 bg-background">
-      <div className="mx-auto flex max-w-5xl items-center justify-between px-6 pt-8 sm:px-10">
+      <div className="mx-auto flex max-w-(--site-w) items-center justify-between px-6 pt-8 sm:px-10">
         <Link
           href="/"
           className="font-serif text-lg tracking-tight text-accent"
@@ -47,7 +47,7 @@ export function Nav() {
           ))}
         </ul>
       </div>
-      <nav className="mx-auto max-w-5xl px-6 pb-4 pt-3 sm:px-10">
+      <nav className="mx-auto max-w-(--site-w) px-6 pb-4 pt-3 sm:px-10">
         <ul className="flex flex-wrap gap-x-4 gap-y-1 font-mono text-xs text-muted">
           {sectionLinks.map((link, i) => {
             const active =
